@@ -3,7 +3,6 @@ const errorHandlor = require('./middleware/errorHandler');
 const connectDb = require('./config/dbConnections');
 const dotenv = require("dotenv").config();
 
-
 const app = express();
 connectDb();
 
@@ -14,7 +13,9 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 // if user hits /api/users this routes will called
-app.use("/api/users",require("./routes/users"))
+app.use("/api/users", require("./routes/userRoutes"))
+// category routes
+app.use("/api/categories",require("./routes/categoryRoutes"))
 
 //error handler middleware
 app.use(errorHandlor);

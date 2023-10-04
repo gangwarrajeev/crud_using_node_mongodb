@@ -10,7 +10,23 @@ const UserSchema = mongoose.Schema({
     },
     mobile_number: {
         type:String,
+        required:[true,"Please enter your mobile no"]
     },
+    education:{
+        type:String,
+        required:[true,"Please enter your education"]
+    },
+    city:{
+        type:String,
+        required:[true,"Please enter your city"]
+    },
+    salary:{
+        type:String,
+        required:[true,"Please enter your salary"]
+    },
+},
+{
+    timestamps:true
 });
 
 module.exports =  mongoose.model("users",UserSchema);

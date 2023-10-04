@@ -9,7 +9,7 @@ const connectDb = async () => {
             connect.connection.name)
     }catch(err){
         console.log(err)
-        process.exit(1)
+        // process.exit(1)
     }
 }
 module.exports = connectDb;
